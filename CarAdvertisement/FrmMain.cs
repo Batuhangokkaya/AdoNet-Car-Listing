@@ -89,6 +89,15 @@ namespace CarAdvertisement
         {
             dgvAds.DataSource = _announcementRepository.GetAllAdAndCar();
         }
+        private void llblPriceFilterASC_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            dgvAds.DataSource = _announcementRepository.GetAllAdAndCar().OrderBy(x => x.Price).ToList();
+        }
+
+        private void llblPriceFilterDESC_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            dgvAds.DataSource = _announcementRepository.GetAllAdAndCar().OrderByDescending(x => x.Price).ToList();
+        }
 
         private void SetButtonVisibility()
         {
@@ -108,16 +117,6 @@ namespace CarAdvertisement
             {
                 Application.Exit(); // Uygulamayı tamamen kapat
             }
-        }
-
-        private void llblPriceFilterASC_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            dgvAds.DataSource = _announcementRepository.GetAllAdAndCar().OrderBy(x => x.Price).ToList();
-        }
-
-        private void llblPriceFilterDESC_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            dgvAds.DataSource = _announcementRepository.GetAllAdAndCar().OrderByDescending(x => x.Price).ToList();
         }
     }
 }
