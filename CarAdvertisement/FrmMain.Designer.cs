@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             pnlMenu = new Panel();
+            llblPriceFilterASC = new LinkLabel();
             btnUserManagement = new Button();
             lblUsername = new Label();
             btnAddCar = new Button();
@@ -36,22 +37,41 @@
             btnAddAd = new Button();
             btnLogout = new Button();
             dgvAds = new DataGridView();
+            llblPriceFilterDESC = new LinkLabel();
             pnlMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvAds).BeginInit();
             SuspendLayout();
             // 
             // pnlMenu
             // 
+            pnlMenu.Controls.Add(llblPriceFilterDESC);
+            pnlMenu.Controls.Add(llblPriceFilterASC);
             pnlMenu.Controls.Add(btnUserManagement);
             pnlMenu.Controls.Add(lblUsername);
             pnlMenu.Controls.Add(btnAddCar);
             pnlMenu.Controls.Add(btnDetails);
             pnlMenu.Controls.Add(btnAddAd);
             pnlMenu.Controls.Add(btnLogout);
+            pnlMenu.Font = new Font("Segoe UI", 9F);
             pnlMenu.Location = new Point(12, 12);
             pnlMenu.Name = "pnlMenu";
             pnlMenu.Size = new Size(122, 426);
             pnlMenu.TabIndex = 0;
+            // 
+            // llblPriceFilterASC
+            // 
+            llblPriceFilterASC.ActiveLinkColor = Color.FromArgb(15, 175, 165);
+            llblPriceFilterASC.AutoSize = true;
+            llblPriceFilterASC.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            llblPriceFilterASC.LinkBehavior = LinkBehavior.NeverUnderline;
+            llblPriceFilterASC.LinkColor = Color.Black;
+            llblPriceFilterASC.Location = new Point(3, 112);
+            llblPriceFilterASC.Name = "llblPriceFilterASC";
+            llblPriceFilterASC.Size = new Size(98, 15);
+            llblPriceFilterASC.TabIndex = 9;
+            llblPriceFilterASC.TabStop = true;
+            llblPriceFilterASC.Text = "Fiyata Göre Artan";
+            llblPriceFilterASC.LinkClicked += llblPriceFilterASC_LinkClicked;
             // 
             // btnUserManagement
             // 
@@ -122,6 +142,21 @@
             dgvAds.Size = new Size(1318, 423);
             dgvAds.TabIndex = 6;
             // 
+            // llblPriceFilterDESC
+            // 
+            llblPriceFilterDESC.ActiveLinkColor = Color.FromArgb(15, 175, 165);
+            llblPriceFilterDESC.AutoSize = true;
+            llblPriceFilterDESC.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 162);
+            llblPriceFilterDESC.LinkBehavior = LinkBehavior.NeverUnderline;
+            llblPriceFilterDESC.LinkColor = Color.Black;
+            llblPriceFilterDESC.Location = new Point(3, 136);
+            llblPriceFilterDESC.Name = "llblPriceFilterDESC";
+            llblPriceFilterDESC.Size = new Size(104, 15);
+            llblPriceFilterDESC.TabIndex = 10;
+            llblPriceFilterDESC.TabStop = true;
+            llblPriceFilterDESC.Text = "Fiyata Göre Azalan";
+            llblPriceFilterDESC.LinkClicked += llblPriceFilterDESC_LinkClicked;
+            // 
             // FrmMain
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -149,5 +184,7 @@
         private DataGridView dgvAds;
         private Button btnDetails;
         private Button btnUserManagement;
+        private LinkLabel llblPriceFilterASC;
+        private LinkLabel llblPriceFilterDESC;
     }
 }
