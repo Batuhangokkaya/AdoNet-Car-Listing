@@ -149,7 +149,6 @@ namespace Repositories.Concrete
                 {
                     CarWithAnnouncement carWithListing = new CarWithAnnouncement
                     {
-
                         AnnouncementID = (int)reader["AnnouncementID"],
                         FirstName      = reader["FirstName"].ToString(),
                         LastName       = reader["LastName"].ToString(),
